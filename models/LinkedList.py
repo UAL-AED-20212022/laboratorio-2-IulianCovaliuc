@@ -3,7 +3,7 @@ from models.Node import Node
 class LinkedList:
     def __init__(self):
         self.start_node = None
-    
+
     def traverse_list(self):
         if self.start_node is None:
             print("List has no element")
@@ -24,13 +24,13 @@ class LinkedList:
         while n.ref is not None:
             n = n.ref
         n.ref = new_node
-    
+
     def insert_at_start(self, data):
         new_node = Node(data)
         new_node.ref = self.start_node
         self.start_node = new_node
 
-    
+
     def insert_after_item(self, x, data):
         n = self.start_node
         print(n.ref)
@@ -49,7 +49,7 @@ class LinkedList:
         if self.start_node is None:
             print("List has no element")
             return
-        
+
         if x == self.start_node.item:
             new_node = Node(data)
             new_node.ref = self.start_node
@@ -61,7 +61,7 @@ class LinkedList:
         while n.ref is not None:
             if n.ref.item is not None:
                 if n.ref.item == x:
-                    break 
+                    break
                 n = n.ref
 
         if n.ref is None:
@@ -87,7 +87,7 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = n.ref
             n.ref = new_node
-            
+
 
     def get_count(self):
         if self.start_node is None:
@@ -110,7 +110,7 @@ class LinkedList:
                 print("Item found")
                 return True
             n = n.ref
-        print("item bot found")
+        print("item not found")
         return False
 
 
@@ -119,7 +119,7 @@ class LinkedList:
             print("The list has no element to delete")
             return
         self.start_node = self.start_node.ref
-    
+
     def delete_at_end(self):
         if self.start_node is None:
             print("The list has no elemnet to delete")
@@ -146,7 +146,7 @@ class LinkedList:
 
         else:
             n.ref = n.ref.ref
-            
+
     def reverse_linkedlist(self):
         prev = None
         n = self.start_node
@@ -157,8 +157,8 @@ class LinkedList:
             n = next
 
         self.start_node = prev
-    
-    def get_last_node(self): 
+
+    def get_last_node(self):
         #retorna o último elemento da lista
         n = 1
         temp = self.start_node
@@ -167,7 +167,7 @@ class LinkedList:
             temp = temp.ref
             length += 1
 
-        if n > length: 
+        if n > length:
             return
         temp = self.start_node
         for i in range(0, length - n):
